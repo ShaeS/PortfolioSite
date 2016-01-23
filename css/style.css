@@ -1,0 +1,682 @@
+
+
+
+
+/********************************************
+SITEWIDE STYLES
+********************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', serif;
+  color: #343434;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+p {
+  color:dimgray;
+  line-height: 1.8em;
+}
+
+section {
+  box-shadow: 0px -10px 5px rgba(0,0,0,0.3);
+  position:relative;
+  z-index: 2;
+}
+
+.hollowbtn {
+  -webkit-border-radius: 26;
+  -moz-border-radius: 26;
+  border-radius: 26px;
+  color: #990000;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border: solid #990000 2px;
+  text-decoration: none;
+  background-color:white;
+}
+
+.fullbtn {
+  -webkit-border-radius: 26;
+  -moz-border-radius: 26;
+  border-radius: 26px;
+  color: #fff;
+  font-size: 1.1em;
+  background: #990000;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.titledivider {
+  background: url("../img/texture.png");
+  background-color: #990000;
+  color: white;
+  text-align: center;
+}
+
+.titledivider h2 {
+  font-size: 3em;
+  margin: 0;
+  padding: 60px;
+}
+
+.landingback {
+  background: url("../img/landingback.png");
+  background-repeat: repeat;
+  background-size: 600px;
+}
+
+span {
+  color: #990000;
+}
+
+/********************************************
+HEADER
+********************************************/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position:relative;
+  z-index:100;
+}
+
+.headlogo {
+  display:flex;
+  flex-direction: column;
+}
+
+#logo {
+  font-size:3em;
+  padding: 5px 10px 1px;
+}
+
+#shae {
+  font-weight: 700;
+  color: #343434;
+}
+
+.pipe {
+  font-weight: 400;
+  color: #990000;
+}
+
+#scotten {
+  font-weight: 300;
+  color: #343434;
+}
+
+.subtitle span {
+  font-size:1.2em;
+  padding: 0 0 0 10px;
+  color: #343434;
+}
+
+
+
+
+
+
+
+/********************************************
+NAVIGATION
+********************************************/
+
+
+nav {
+  margin: 0 15px 0 0;
+}
+
+.selected {
+  border-bottom: solid 3px #990000;
+}
+
+header ul {
+  list-style: none;
+  display:flex;
+  font-size: 1.2em;
+  margin:15px 0;
+}
+
+header ul a {
+  color: #343434;
+  text-decoration: none;
+}
+
+header ul li {
+  padding: 5px 10px;
+}
+
+header ul li:hover {
+  color: #990000;
+}
+
+.lipipe {
+  color: #990000;
+  font-size:2.3em;
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  font-weight:100;
+  color:#b9b9b9;
+  margin: 0 10px;
+}
+
+.menuitem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons {
+  margin:0;
+  padding:0;
+  width:35px;
+  opacity: 60%;
+}
+
+.menuitem p {
+  margin:-10px 0 0;
+  text-align: center;
+}
+
+
+
+
+
+/********************************************
+LANDING
+********************************************/
+
+
+#landing-page {
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+
+.maintitle {
+  text-align: center;
+}
+
+.maintitle h1 {
+  margin:0;
+  font-size: 4em;
+}
+
+.maintitle h2 {
+  margin:0;
+  font-size: 2em;
+}
+
+.homepic {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding:0;
+}
+
+.homepic img {
+  width:50%;
+  margin: 0 auto -5px;
+  max-width: 800px;
+}
+
+
+
+
+
+
+/********************************************
+WORK
+********************************************/
+
+
+#work h2 {
+  font-size: 3em;
+  text-align: center;
+}
+
+.left {
+  display: flex;
+  width:100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+.right {
+  display: flex;
+  width:100%;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+.left .info {
+  padding: 0 50px 0 0;
+  width: 50%;
+}
+
+.right .info {
+  padding: 0 0 0 50px;
+  width:50%;
+}
+
+.picture  {
+  width:50%;
+}
+
+.picture img {
+  margin-bottom: 30px;
+  max-width: 100%;
+}
+
+.info h3 {
+  font-size: 1.5em;
+}
+
+.info p {
+  margin-bottom: 25px;
+}
+
+.info h4 {
+  font-size: 1.1em;
+  color: dimgray;
+}
+
+.info i {
+  font-size: 2em;
+  padding: 0 8px 0 0;
+  vertical-align:middle;
+}
+
+.info ul {
+  color: dimgray;
+  list-style: none;
+  padding:0;
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.info ul li {
+  padding: 5px 0;
+}
+
+.btnspace {
+  margin: 40px 0;
+}
+
+
+
+
+
+/********************************************
+ABOUT
+********************************************/
+
+
+#about {
+  text-align: center;
+  margin: 50px 0;
+}
+
+#about h2 {
+  font-size: 3em;
+}
+
+#about img {
+  border-radius: 100px;
+  width:200px;
+  height:200px;
+  border: 6px solid #d3d3d3;
+}
+
+#about h3 {
+  font-size: 1.5em;
+}
+
+.aboutinfo {
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+}
+
+.profinfo {
+  padding: 0 90px 0 0;
+  flex: 2;
+}
+
+.persinfo {
+  flex:1;
+}
+
+#about h2 {
+  color: #990000;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+
+
+/********************************************
+SKILLS
+********************************************/
+
+
+.skillchart {
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.flexchart {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  color: #ededed;
+  width:300px;
+}
+
+.skilldesc {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.skilldesc p {
+  margin:0;
+  line-height: 2em;
+  color:#f0f0f0;
+  font-size: 1.2em;
+}
+
+
+
+
+
+
+/********************************************
+CONTACT
+********************************************/
+
+
+.colorwrap {
+  background: url("../img/map.png");
+  background-size:800px;
+  background-repeat:repeat;
+  background-color: #2e2e2e;
+  width:100%;
+}
+.wrappergrey {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+  color:#f0f0f0;
+}
+
+.contact h3 {
+  margin:0;
+  font-size: 2em;
+}
+
+.contact p {
+  margin:0;
+  line-height: 2em;
+  color:#f0f0f0;
+  font-size: 1.2em;
+  padding: 20px 0;
+}
+
+.contact {
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.contacttext {
+  padding: 0 80px 0 0;
+  width:50%;
+}
+
+.contactform {
+  width:50%;
+}
+
+.form {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+.contactform form input {
+  font-size:1.5em;
+  padding:5px;
+  outline:none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  transition: .3s ease-in-out;
+}
+
+.contactform form input:focus {
+  border-bottom: 2px solid #990000;
+}
+
+.contactform form textarea {
+  font-size:1.5em;
+  padding:5px;
+  outline:none;
+  background-color: transparent;
+  border:none;
+  border-left: 1px solid #8e8e8e;
+  border-right: 1px solid #8e8e8e;
+  border-bottom: 2px solid white;
+  transition: .3s ease-in-out;
+  height: 160px;
+}
+
+.contactform form textarea:focus {
+  border-bottom: 2px solid #990000;
+  border-left: 1px solid #990000;
+  border-right: 1px solid #990000;
+}
+
+.contactform form label {
+  padding:5px;
+}
+
+#formbtn {
+  border: none;
+  float:right;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+
+  
+  
+/********************************************
+MEDIA QUERIES 768
+********************************************/
+
+
+@media screen and (max-width:768px) {
+  
+  
+  .wrapper {
+    width: 85%;
+  }
+  
+  .wrappergrey {
+    width: 85%;
+  }
+
+  .titledivider h2 {
+    font-size: 2em;
+    padding: 45px;
+  }
+  
+  header {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  
+  nav {
+    margin: 0 auto; 
+    text-align: center;
+  }
+  
+  header ul {
+    padding-left:0; 
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .aboutinfo {
+    flex-direction: column; 
+  }
+  
+  .profinfo {
+    padding:0; 
+  }
+  
+  .maintitle h1 {
+    font-size: 3.5em;
+  }
+
+  .maintitle h2 {
+    font-size: 1.6em;
+  }
+  
+  .skilldesc {
+    width: 75%;
+    padding-top: 40px;
+  }
+  
+  .flexchart {
+    width:220px;
+  }
+  
+  .left {
+    flex-direction: column;
+  }
+
+  .right {
+    flex-direction:column;
+  }
+  
+  .left .info {
+  padding: 0;
+  width:100%;
+}
+
+.right .info {
+  padding: 0;
+  width:100%;
+}
+
+.picture  {
+  width:100%;
+}
+  
+.contact {
+  flex-direction: column;
+}
+  
+.contacttext {
+  padding: 0;
+  width:100%;
+}
+
+.contactform {
+  width:100%;
+}
+  
+  
+  
+  
+}
+
+
+
+/********************************************
+MEDIA QUERIES 460
+********************************************/
+
+
+
+
+@media screen and (max-width:460px) {
+  
+  .wrapper {
+    width: 90%;
+  }
+  
+  .wrappergrey {
+    width: 90%;
+  }
+  
+  .titledivider h2 {
+    font-size: 1.8em;
+    padding: 30px;
+  }
+  
+  .maintitle h1 {
+    font-size: 3em;
+  }
+
+  .maintitle h2 {
+    font-size: 1.2em;
+  }
+  
+  .skilldesc {
+    width: 85%;
+  }
+  
+  .flexchart {
+    width:150px;
+  }
+  
+    .icons {
+  width:28px;
+}
+  
+  header ul {
+  list-style: none;
+  display:flex;
+  font-size: 1em;
+  margin:15px 0;
+}
+  
+  header ul li {
+    padding: 5px; 
+  }
+  
+  
+}
