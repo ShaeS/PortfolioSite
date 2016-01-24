@@ -3,26 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="user-scalable=0, initial-scale=1.0" />
+    <meta name="description" content="Shae Scotten is a Front-End Developer. He studied Digital Design and Devlopment through BCIT, and has since increased his array of knowledge with various languages." />
     <title>Shae Scotten | Web Developer</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/icon">
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="./js/chart.js" type="text/javascript"></script>
+    <script src="./js/jquery.sticky.js" type="text/javascript"></script>
     <script src="./js/main.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="landingback">
     <header>
-      <div class="headlogo"><div id="logo"><span id="shae">Shae</span><span class="pipe">|</span><span id="scotten">Scotten</span></div><div class="subtitle"><span>Front-End Developer</span></div></div>
+      <div class="headlogo"><div id="logo"><p id="shae">Shae</p><span class="pipe">|</span><p id="scotten">Scotten</p></div><div class="subtitle"><p>Front-End Developer</p></div></div>
       <nav>
+        <div id="menu-center">
         <ul>
-          <a href="#workdivider" class="selected"><li><div class="menuitem"><img class="icons" src="assets/work.png" /><p>work</p></div></li></a><span class="lipipe">|</span>
-          <a href="#skillsdivider"><li><div class="menuitem"><img class="icons" src="assets/skills.png" /><p>skills</p></div></li></a><span class="lipipe">|</span>
-          <a href="#aboutdivider"><li><div class="menuitem"><img class="icons" src="assets/about.png" /><p>about</p></div></li></a><span class="lipipe">|</span>
-          <a href="#contactdivider"><li><div class="menuitem"><img class="icons" src="assets/contact.png" /><p>contact</p></div></li></a>
+          <li><a href="#workdivider"><i class="fa fa-code"></i>work</a></li>
+          <li><a href="#skillsdivider"><i class="fa fa-cog"></i>skills</a></li>
+          <li> <a href="#aboutdivider"><i class="fa fa-user"></i>about</a></li>
+          <li> <a href="#contactdivider"><i class="fa fa-envelope"></i>contact</a></li>
         </ul>
+        </div>
       </nav>
     </header>
       <div id="landing-page">
@@ -31,13 +37,15 @@
           <h2><span>Front-End</span> Developer.</h2>
         </div>
         <div class="homepic">
-          <img src="img/shae.png" />
+          <img alt="Picture of Shae Scotten" src="img/shae.png" />
         </div>
       </div>
     </div>
       <section>
       
-        <div id="workdivider" class="titledivider">
+        
+       <div id="workdivider">
+        <div class="titledivider">
           <h2>Work</h2>
         </div>
       
@@ -62,9 +70,8 @@
                 <a target="_blank" href="http://pinebirch.shaescotten.com" class="hollowbtn">Go To Website</a>
               </div>
             </div>
-            <div class="picture"><img src="img/pinebirch.png"</div>
+            <div class="picture"><img alt="Pine and Birch website samples" src="img/pinebirch.png"/></div>
           </div>
-        </div>
              
         <hr/>
           
@@ -85,16 +92,16 @@
                 <a target="_blank" href="http://gastown.shaescotten.com" class="hollowbtn">Go To Website</a>
               </div>
             </div>
-            <div class="picture"><img src="img/gastown.png"</div>
+            <div class="picture"><img alt="Gastown website samples" src="img/gastown.png"/></div>
           </div>
-        </div>
+
           
           <hr/>
           
          <div class="left">
             <div class="info">
               <h3>ESK Design <span>|</span> Design Firm Portfolio</h3>
-              <p>ESK Design is the first website I created in my very first term of school. It was a group project with two other classmates for a fictional design firm. It displays some of the work that the three of us did in our first term.</p>
+              <p>ESK Design is the first website I created in my first term of school. It was a group project with two other classmates for a fictional design firm. It displays some of the work that the three of us did in our first term.</p>
               <h4>Technologies Used:</h4>
               <ul>
                 <li><i class="devicon-html5-plain"></i>HTML5</li>
@@ -108,20 +115,22 @@
                 <a target="_blank" href="http://esk.shaescotten.com" class="hollowbtn">Go To Website</a>
               </div>
             </div>
-            <div class="picture"><img src="img/ESK.png"</div>
+            <div class="picture"><img alt="ESK design website samples" src="img/ESK.png"/></div>
           </div>
         </div>
-          
-      </div>
+        </div>
         </div>
         
-      <div  id="skillsdivider" class="titledivider">
+        
+      <div id="skillsdivider">  
+        
+      <div class="titledivider">
         <h2>Skills</h2>
       </div>
         
       <div class="colorwrap">
         <div class="skilldesc">
-          <p>Below is a list of the <span>skills</span> that I believe are most prominent in my list of <span>abilities</span>. I do have many additional skills not listed, such as <span>AngularJS</span> and <span>Gulp</span>. I'm constantly <span>learning</span> new things and will gladly learn a new skill to <span>solve</span> a tough problem!</p>
+          <p>The following list of <span>skills</span> are the ones that best demonstrate my competance and abilities to date. I also have <span>additional</span> skills not listed, such as <span>AngularJS</span> and <span>Gulp</span>. I am constantly driven, and enjoy learning new skills that broaden my <span>toolkit</span> and allow me to <span>solve</span> different problems as new situations present themselves.</p>
         </div>
         <div class="skillchart">
           <div class="htmlchart flexchart">
@@ -158,32 +167,39 @@
           </div>
         </div>
       </div>
+        </div>
+        
+        
+        <div id="aboutdivider">
     
-        <div  id="aboutdivider" class="titledivider">
+        <div class="titledivider">
           <h2>About Me</h2>
         </div>
           
       <div class="wrapper">
         <div id="about">
-          <img src="img/about.jpg">
+          <img alt="picture of shae scotten" src="img/about.jpg">
           <h2>Front-End Developer</h2>
           <div class="aboutinfo">
             <div class="profinfo">
               <h3>Professional</h3>
-              <p>My name is <span>Shae Scotten</span> and I am a graduate of the <span>Digital Design and Development</span> program at BCIT. The program is a mix of graphic design, <span>web development</span>, marketing and business, but, in the third term I started to develop my skills as a <span>front-end developer</span>. I took courses with <span>Team Treehouse</span> on my weekends and breaks, furthering myself as a <span>developer</span> beyond the scope of the program.<br/><br/>
+              <p>My name is <span>Shae Scotten</span> and I am a student of the <span>Digital Design and Development</span> program at BCIT, graduating this June. The program is a mix of graphic design, <span>web development</span>, marketing and business, but, over time my interests and strengths took me to favor working as a <span>front-end developer</span>. I took courses with <span>Team Treehouse</span> on my weekends and breaks, furthering my abilities as a <span>developer</span> beyond the scope of the program.<br/><br/>
 
                 I also had the privilege of being the <span>set representative</span> for my program, allowing me to act as the middle man between the students and the program head and dean, <span>solving student problems</span> and relaying crucial information. </p>
             </div>
             <div class="persinfo">
               <h3>Personal</h3>
-              <p>When I'm not working on websites I spend most of my time on <span>Netflix</span>, keeping up with my favorite shows and movies. I keep active at the <span>gym</span> several times a week, and spend time writing <span>music</span>, and learning new songs. If you don't find me at any of those places I'll be playing <span>video games</span> with my friends.</p>
+              <p>When I'm not working on websites I keep active at the <span>gym</span>, adventuring through the core of downtown <span>Vancouver</span>, or getting together with friends to play various <span>sports</span>. I spend much of my time writing <span>music</span>, learning new <span>songs</span>, and recording new <span>tracks</span> with some fellow musicians. If you don't find me doing any of these things I'll be playing <span>video games</span>, or keeping up with my favorite shows on <span>Netflix</span>.</p>
             </div>
           </div>
         </div>      
       </div>
+        </div>
         
         
-      <div  id="contactdivider" class="titledivider">
+      <div  id="contactdivider">  
+        
+      <div class="titledivider">
         <h2>Contact</h2>
       </div>
       <div class="colorwrap"> 
@@ -197,17 +213,24 @@
             <div class="contactform">
               <form><div class="form">
                 <label for="name">Name:</label>
-                <input id="name" type="text" placeholder="ex. Steve Rogers"/><br/>
+                <input name="name" id="name" type="text" placeholder="ex. Steve Rogers" required /><br/>
                 <label for="email">Email:</label>
-                <input id="email" type="email" placeholder="ex. TheCaptain@avengers.org"/><br/>
+                <input name="email" id="email" type="email" placeholder="ex. TheCaptain@avengers.org" required /><br/>
                 <label for="message">Message:</label>
-                <textarea id="message"></textarea></div>
-                <button id="formbtn" class="fullbtn">Send</button>
+                <textarea id="message" name="message" required></textarea></div>
+                <div class="btnmsg">
+                  <div id="form-messages"></div>
+                  <button type="submit" id="formbtn" class="fullbtn">Send</button>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
+        </div>
     </section>
+    <footer>
+      <p>copyright &copy; 2016</p>
+    </footer>
   </body>
 </html>

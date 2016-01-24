@@ -1,23 +1,135 @@
 $(document).ready(function() {
   
+
+var colors = ["#990000", "#009933","#0065ff","#ac3973","#ff9900","#33cccc"];
+var colorNumber = Math.floor(Math.random() * (colors.length));
+  
+function changeColors() {
+  $("span").css("color", colors[colorNumber]);
+  $(".titledivider").css("background-color", colors[colorNumber]);
+  $("footer").css("background-color", colors[colorNumber]);
+  $(".hollowbtn").css({"border": "solid 2px " + colors[colorNumber], "color": colors[colorNumber]});
+  $(".fullbtn").css("background", colors[colorNumber]);
+  $("#about h2").css("color", colors[colorNumber]);
+  $(".contactform form textarea").focusin(function() {
+    $(this).css({
+      "border-bottom": "2px solid " + colors[colorNumber],
+      "border-left": "1px solid " + colors[colorNumber],
+      "border-right": "1px solid " + colors[colorNumber]
+    });
+  }).focusout(function() {
+    $(this).css({
+      "border-bottom": "2px solid #8e8e8e",
+      "border-left": "1px solid #8e8e8e",
+      "border-right": "1px solid #8e8e8e"
+    });
+  });
+  $(".contactform form input").focusin(function() {
+    $(this).css({
+      "border-bottom": "2px solid " + colors[colorNumber]
+    });
+  }).focusout(function() {
+      $(this).css({
+        "border-bottom": "2px solid #8e8e8e"
+      });
+  });
+}
+    
+changeColors();
+  
+
+$('#formbtn').click(function(event) {
+  event.preventDefault();
+  
+  var name = $('#name').val();
+  var email = $('#email').val();
+  var message = $('#message').val();
+  
+  if (name != "" && email != "" && message != "") {
+  $.ajax({
+    url: "./php/mailer.php",
+    type:"POST",
+    dataType: "html",
+    data: {
+      name: name,
+      email: email,
+      message: message
+    },
+    success: function() {
+      $("#form-messages").removeClass("error"); 
+      $("#form-messages").addClass("success"); 
+      $("#form-messages").text("Thank you! Your message has been sent!");
+      
+      $('#name').val('');
+      $('#email').val('');
+      $('#message').val('');
+    },
+    fail: function() {
+      $("#form-messages").removeClass("success"); 
+      $("#form-messages").addClass("error"); 
+      $("#form-messages").text("There was an error!"); 
+    }
+  });
+  } else {
+     $("#form-messages").removeClass("success"); 
+      $("#form-messages").addClass("error"); 
+      $("#form-messages").text("Please fill out the fields!"); 
+  }
+
+});  
+  
+
+  
+$('header').sticky({
+  topSpacing:0,
+});
+  
+
+$('header').on('sticky-start', function() {
+  $('header').addClass('sticky-header');
+}).on('sticky-end', function() { 
+  $('header').removeClass('sticky-header'); 
+});
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+$(document).on("scroll", onScroll);
+
+$('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+    $(document).off("scroll");
+
+    $('a').each(function () {
+        $(this).removeClass('selected');
+    })
+    $(this).addClass('selected');
+
+    var target = this.hash,
+        menu = target;
+    $target = $(target);
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top-100
+    }, 500, 'swing', function () {
+        window.location.hash = target;
+        $(document).on("scroll", onScroll);
+    });
+});
+
+function onScroll(event){
+  var scrollPos = $(document).scrollTop();
+  $('#menu-center a').each(function () {
+      var currLink = $(this);
+      var refElement = $(currLink.attr("href"));
+      if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+          $('#menu-center ul li a').removeClass("selected").css("color","#343434");
+          currLink.addClass("selected").css("color",colors[colorNumber]);
+      }
+      else{
+          currLink.removeClass("selected");
+      }
+  });
+}
   
   
   
@@ -34,7 +146,7 @@ function doughnutHTML() {
   var doughnutData = [
           {
             value: 84,
-            color:"#990000",
+            color:colors[colorNumber],
             label: "True"
           },
           {
@@ -78,7 +190,7 @@ function doughnutCSS() {
 var doughnutData = [
 				{
 					value: 81,
-					color:"#990000",
+					color:colors[colorNumber],
 					label: "True"
 				},
 				{
@@ -121,7 +233,7 @@ var doughnutData = [
   var doughnutData = [
           {
             value: 65,
-            color:"#990000",
+            color:colors[colorNumber],
             label: "True"
           },
           {
@@ -165,7 +277,7 @@ function doughnutJQuery() {
 var doughnutData = [
 				{
 					value: 73,
-					color:"#990000",
+					color:colors[colorNumber],
 					label: "True"
 				},
 				{
@@ -208,7 +320,7 @@ function doughnutPHP() {
   var doughnutData = [
           {
             value: 64,
-            color:"#990000",
+            color:colors[colorNumber],
             label: "True"
           },
           {
@@ -252,7 +364,7 @@ function doughnutSQL() {
 var doughnutData = [
 				{
 					value: 68,
-					color:"#990000",
+					color:colors[colorNumber],
 					label: "True"
 				},
 				{
@@ -295,7 +407,7 @@ function doughnutphotoshop() {
   var doughnutData = [
           {
             value: 78,
-            color:"#990000",
+            color:colors[colorNumber],
             label: "True"
           },
           {
@@ -339,7 +451,7 @@ function doughnutillustrator() {
 var doughnutData = [
 				{
 					value: 72,
-					color:"#990000",
+					color:colors[colorNumber],
 					label: "True"
 				},
 				{
