@@ -1,6 +1,11 @@
 $(document).ready(function() {
   
-
+  
+  
+  
+/////////////////COLOR CHANGES//////////////////
+  
+  
 var colors = ["#990000", "#009933","#0065ff","#ac3973","#ff9900","#33cccc"];
 var colorNumber = Math.floor(Math.random() * (colors.length));
   
@@ -37,6 +42,33 @@ function changeColors() {
     
 changeColors();
   
+  
+  
+  
+/////////////////BUTTON HOVER EFFECTS//////////////////
+
+  
+$(function(){
+  $('.hollowbtn').hover(function(){
+    $(this).html('Go To Website<i style="font-size:1em;padding: 0 0 1.75px 0.5em;" class="fa fa-caret-right"></i>');
+  }, function(){
+    $(this).html('Go To Website'); 
+  });
+})
+
+$(function(){  
+  $('.fullbtn').hover(function(){
+    $(this).html('Send<i style="font-size:1em;padding: 0 0 0px 0.5em;" class="fa fa-envelope-o"></i>');
+  }, function(){
+    $(this).html('Send'); 
+  });
+})
+  
+  
+  
+  
+  
+/////////////////////FORM SUBMIT///////////////////////
 
 $('#formbtn').click(function(event) {
   event.preventDefault();
@@ -79,6 +111,8 @@ $('#formbtn').click(function(event) {
 });  
   
 
+
+/////////////////////STICKY HEADER///////////////////////
   
 $('header').sticky({
   topSpacing:0,
@@ -93,6 +127,8 @@ $('header').on('sticky-start', function() {
   
   
 
+  
+/////////////////////SMOOTH SCROLLING///////////////////////
 
 $(document).on("scroll", onScroll);
 
@@ -132,15 +168,15 @@ function onScroll(event){
 }
   
   
+/////////////////////SCROLLME///////////////////////
+  
+
   
   
   
   
   
-  
-  
-  
-  
+/////////////////////SKILL CHARTS///////////////////////
  
 function doughnutHTML() {
   var doughnutData = [
@@ -155,6 +191,23 @@ function doughnutHTML() {
             label: "False"
           }
         ];
+  
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#html')) {
+      if (inView) { return; }
+        inView = true;
 
     var ctx = $('#html').get(0).getContext("2d");
     var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
@@ -183,6 +236,10 @@ function doughnutHTML() {
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
 
   
@@ -200,8 +257,25 @@ var doughnutData = [
 				}
 			];
 
-  var ctx = $('#css').get(0).getContext("2d");
-  var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#css')) {
+      if (inView) { return; }
+        inView = true;
+
+    var ctx = $('#css').get(0).getContext("2d");
+    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
       animation:true,
       responsive: true,
       showTooltips: false,
@@ -227,7 +301,12 @@ var doughnutData = [
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
   
   function doughnutjava() {
   var doughnutData = [
@@ -242,6 +321,22 @@ var doughnutData = [
             label: "False"
           }
         ];
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#java')) {
+      if (inView) { return; }
+        inView = true;
 
     var ctx = $('#java').get(0).getContext("2d");
     var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
@@ -270,7 +365,12 @@ var doughnutData = [
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
 
   
 function doughnutJQuery() {
@@ -287,8 +387,25 @@ var doughnutData = [
 				}
 			];
 
-  var ctx = $('#jquery').get(0).getContext("2d");
-  var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#jquery')) {
+      if (inView) { return; }
+        inView = true;
+
+    var ctx = $('#jquery').get(0).getContext("2d");
+    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
       animation:true,
       responsive: true,
       showTooltips: false,
@@ -314,7 +431,12 @@ var doughnutData = [
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
   
 function doughnutPHP() {
   var doughnutData = [
@@ -329,6 +451,23 @@ function doughnutPHP() {
             label: "False"
           }
         ];
+
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#php')) {
+      if (inView) { return; }
+        inView = true;
 
     var ctx = $('#php').get(0).getContext("2d");
     var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
@@ -357,7 +496,12 @@ function doughnutPHP() {
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
 
   
 function doughnutSQL() {
@@ -373,9 +517,25 @@ var doughnutData = [
 					label: "False"
 				}
 			];
+  var inView = false;
 
-  var ctx = $('#sql').get(0).getContext("2d");
-  var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#sql')) {
+      if (inView) { return; }
+        inView = true;
+
+    var ctx = $('#sql').get(0).getContext("2d");
+    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
       animation:true,
       responsive: true,
       showTooltips: false,
@@ -401,7 +561,12 @@ var doughnutData = [
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
   
 function doughnutphotoshop() {
   var doughnutData = [
@@ -416,6 +581,22 @@ function doughnutphotoshop() {
             label: "False"
           }
         ];
+  var inView = false;
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#photoshop')) {
+      if (inView) { return; }
+        inView = true;
 
     var ctx = $('#photoshop').get(0).getContext("2d");
     var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
@@ -444,7 +625,12 @@ function doughnutphotoshop() {
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
 
   
 function doughnutillustrator() {
@@ -460,9 +646,25 @@ var doughnutData = [
 					label: "False"
 				}
 			];
+  var inView = false;
 
-  var ctx = $('#illustrator').get(0).getContext("2d");
-  var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
+}
+
+$(window).scroll(function() {
+    if (isScrolledIntoView('#illustrator')) {
+      if (inView) { return; }
+        inView = true;
+
+    var ctx = $('#illustrator').get(0).getContext("2d");
+    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
       animation:true,
       responsive: true,
       showTooltips: false,
@@ -488,7 +690,12 @@ var doughnutData = [
       ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
     }
   });
+      } else {
+        inView = false;  
+      }
+  });
 }
+
   
   
 doughnutHTML();

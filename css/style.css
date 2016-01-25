@@ -88,6 +88,7 @@ footer p {
   color: white;
 }
 
+
 /********************************************
 HEADER
 ********************************************/
@@ -178,6 +179,8 @@ nav {
 
 .selected {
   color: #990000;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 
 header ul {
@@ -203,7 +206,7 @@ header ul li:hover {
   padding: 5px 20px 15px;
 }
 
-.fa {
+.navfa {
   display: block;
   text-align: center;
 }
