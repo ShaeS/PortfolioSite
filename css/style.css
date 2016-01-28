@@ -32,10 +32,10 @@ section {
 
 .hollowbtn {
   border-radius: 26px;
-  color: #990000;
+  color: #ff3333;
   font-size: 1.1em;
   padding: 10px 20px;
-  border: solid 2px #990000;
+  border: solid 2px #ff3333;
   text-decoration: none;
   background-color:white;
   outline: none;
@@ -45,7 +45,7 @@ section {
   border-radius: 26px;
   color: #fff;
   font-size: 1.1em;
-  background: #990000;
+  background: #ff3333;
   padding: 10px 20px;
   text-decoration: none;
   outline: none;
@@ -54,7 +54,7 @@ section {
 .titledivider {
   background: url("../img/texture.png");
   background-size: 1100px;
-  background-color: #990000;
+  background-color: #ff3333;
   color: white;
   text-align: center;
 }
@@ -72,14 +72,14 @@ section {
 }
 
 span {
-  color: #990000;
+  color: #ff3333;
 }
 
 footer {
   text-align: center;
   background: url("../img/texture.png");
   background-size: 800px;
-  background-color: #990000;
+  background-color: #ff3333;
 }
 
 footer p {
@@ -144,7 +144,7 @@ header {
 
 .pipe {
   font-weight: 400;
-  color: #990000;
+  color: #ff3333;
 }
 
 #scotten {
@@ -178,7 +178,7 @@ nav {
 }
 
 .selected {
-  color: #990000;
+  color: #ff3333;
   -webkit-transition: .3s linear;
   transition: .3s linear;
 }
@@ -427,7 +427,7 @@ ABOUT
 }
 
 #about h2 {
-  color: #990000;
+  color: #ff3333;
   text-align: center;
   font-size: 1.8em;
 }
@@ -572,7 +572,7 @@ CONTACT
 }
 
 .contactform form input:focus {
-  border-bottom: 2px solid #990000;
+  border-bottom: 2px solid #ff3333;
 }
 
 .contactform form textarea {
@@ -590,9 +590,9 @@ CONTACT
 }
 
 .contactform form textarea:focus {
-  border-bottom: 2px solid #990000;
-  border-left: 1px solid #990000;
-  border-right: 1px solid #990000;
+  border-bottom: 2px solid #ff3333;
+  border-left: 1px solid #ff3333;
+  border-right: 1px solid #ff3333;
 }
 
 .contactform form label {

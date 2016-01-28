@@ -6,10 +6,10 @@ $(document).ready(function() {
 /////////////////COLOR CHANGES//////////////////
   
   
-var colors = ["#990000", "#009933","#0065ff","#ac3973","#ff9900","#33cccc"];
+var colors = ["#009933","#0065ff","#ac3973","#ff9900","#33cccc", "#ff3333"];
 var colorNumber = Math.floor(Math.random() * (colors.length));
   
-function changeColors() {
+$(function() {
   $("span").css("color", colors[colorNumber]);
   $(".titledivider").css("background-color", colors[colorNumber]);
   $("footer").css("background-color", colors[colorNumber]);
@@ -38,10 +38,7 @@ function changeColors() {
         "border-bottom": "2px solid #8e8e8e"
       });
   });
-}
-    
-changeColors();
-  
+});
   
   
   
@@ -63,8 +60,6 @@ $(function(){
     $(this).html('Send'); 
   });
 })
-  
-  
   
   
   
@@ -125,7 +120,6 @@ $('header').on('sticky-start', function() {
   $('header').removeClass('sticky-header'); 
 });
   
-  
 
   
 /////////////////////SMOOTH SCROLLING///////////////////////
@@ -168,25 +162,18 @@ function onScroll(event){
 }
   
   
-/////////////////////SCROLLME///////////////////////
-  
-
-  
-  
-  
-  
   
 /////////////////////SKILL CHARTS///////////////////////
  
-function doughnutHTML() {
+function doughnutData(value,remain,idnum) {
   var doughnutData = [
           {
-            value: 84,
+            value: value,
             color:colors[colorNumber],
             label: "True"
           },
           {
-            value: 16,
+            value: remain,
             color: "#ededed",
             label: "False"
           }
@@ -205,11 +192,11 @@ function isScrolledIntoView(elem) {
 }
 
 $(window).scroll(function() {
-    if (isScrolledIntoView('#html')) {
+    if (isScrolledIntoView(idnum)) {
       if (inView) { return; }
         inView = true;
 
-    var ctx = $('#html').get(0).getContext("2d");
+    var ctx = $(idnum).get(0).getContext("2d");
     var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
       animation:true,
       responsive: true,
@@ -243,468 +230,13 @@ $(window).scroll(function() {
 }
 
   
-function doughnutCSS() {
-var doughnutData = [
-				{
-					value: 81,
-					color:colors[colorNumber],
-					label: "True"
-				},
-				{
-					value: 19,
-					color: "#ededed",
-					label: "False"
-				}
-			];
-
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#css')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#css').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-  
-  function doughnutjava() {
-  var doughnutData = [
-          {
-            value: 65,
-            color:colors[colorNumber],
-            label: "True"
-          },
-          {
-            value: 35,
-            color: "#ededed",
-            label: "False"
-          }
-        ];
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#java')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#java').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-
-  
-function doughnutJQuery() {
-var doughnutData = [
-				{
-					value: 73,
-					color:colors[colorNumber],
-					label: "True"
-				},
-				{
-					value: 27,
-					color: "#ededed",
-					label: "False"
-				}
-			];
-
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#jquery')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#jquery').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-  
-function doughnutPHP() {
-  var doughnutData = [
-          {
-            value: 64,
-            color:colors[colorNumber],
-            label: "True"
-          },
-          {
-            value: 36,
-            color: "#ededed",
-            label: "False"
-          }
-        ];
-
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#php')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#php').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-
-  
-function doughnutSQL() {
-var doughnutData = [
-				{
-					value: 68,
-					color:colors[colorNumber],
-					label: "True"
-				},
-				{
-					value: 32,
-					color: "#ededed",
-					label: "False"
-				}
-			];
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#sql')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#sql').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-  
-function doughnutphotoshop() {
-  var doughnutData = [
-          {
-            value: 78,
-            color:colors[colorNumber],
-            label: "True"
-          },
-          {
-            value: 22,
-            color: "#ededed",
-            label: "False"
-          }
-        ];
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#photoshop')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#photoshop').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-
-  
-function doughnutillustrator() {
-var doughnutData = [
-				{
-					value: 72,
-					color:colors[colorNumber],
-					label: "True"
-				},
-				{
-					value: 28,
-					color: "#ededed",
-					label: "False"
-				}
-			];
-  var inView = false;
-
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewBottom) && (elemBottom >= docViewTop));
-}
-
-$(window).scroll(function() {
-    if (isScrolledIntoView('#illustrator')) {
-      if (inView) { return; }
-        inView = true;
-
-    var ctx = $('#illustrator').get(0).getContext("2d");
-    var myDoughnut = new Chart(ctx).Doughnut(doughnutData,{
-      animation:true,
-      responsive: true,
-      showTooltips: false,
-      percentageInnerCutout : 70,
-      segmentShowStroke : false,
-      onAnimationComplete: function() {
-      
-      var canvasWidthvar = $('.canvas').width();
-      var canvasHeight = $('.canvas').height();
-      var constant = 114;
-      var fontsize = (canvasHeight/constant).toFixed(2);
-
-      ctx.font=fontsize +"em Lato";
-      ctx.textBaseline="middle"; 
-      var total = 0;
-      $.each(doughnutData,function() {
-          total += parseInt(this.value,10);
-      });
-      var tpercentage = ((doughnutData[0].value/total)*100).toFixed(0)+"%";
-      var textWidth = ctx.measureText(tpercentage).width;
-      
-       var txtPosx = Math.round((canvasWidthvar - textWidth)/2);
-      ctx.fillText(tpercentage, txtPosx, canvasHeight/2);
-    }
-  });
-      } else {
-        inView = false;  
-      }
-  });
-}
-
-  
-  
-doughnutHTML();
-doughnutCSS();
-doughnutjava();
-doughnutJQuery();
-doughnutPHP();
-doughnutSQL();
-doughnutphotoshop();
-doughnutillustrator();
+doughnutData(84,16,"#html");
+doughnutData(81,19,"#css");
+doughnutData(70,30,"#java");
+doughnutData(78,22,"#jquery");
+doughnutData(66,34,"#php");
+doughnutData(68,32,"#sql");
+doughnutData(80,20,"#photoshop");
+doughnutData(76,24,"#illustrator");
   
 });
