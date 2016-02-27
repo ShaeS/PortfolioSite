@@ -2,10 +2,14 @@
 
 $(document).ready(function () {
 
-  /////////////////IMAGE FLYIN//////////////////
+  /////////////////SMALL STUFF//////////////////
 
 
   $(".homepic img").hide().fadeIn();
+  
+  $(".headlogo").click(function() {
+    location.reload();
+  });
 
   /////////////////COLOR CHANGES//////////////////
 
@@ -149,7 +153,7 @@ $(document).ready(function () {
 
     var target = this.hash,
       menu = target;
-    $target = $(target);
+    var $target = $(target);
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top - 100
     }, 500, 'swing', function () {
@@ -244,8 +248,6 @@ $(document).ready(function () {
             ctx.fillText(tpercentage, txtPosx, canvasHeight / 2);
           }
         });
-      } else {
-        inView = false;
       }
     });
   }

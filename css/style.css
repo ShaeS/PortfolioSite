@@ -125,6 +125,7 @@ header {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  cursor: pointer;
 }
 
 #logo {
@@ -494,7 +495,7 @@ CONTACT
 
 .colorwrap {
   background: url("../img/map.png");
-  background-size: 800px;
+  background-size: 1000px;
   background-repeat: repeat;
   background-color: #2e2e2e;
   width: 100%;
